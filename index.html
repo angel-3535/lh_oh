@@ -38,84 +38,14 @@
 <body class="montserrat">
   <!-- Modals -->
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body p-5">
-          <h2 class="fw-bold mb-0">
-            Contact Info:
-          </h2>
-          <ul class="d-grid gap-4 my-5 list-unstyled small">
-            <li class="d-flex gap-4">
-              <img src="img/info.png" alt="" class="flex-shrink-0 bi text-body-secondary flex-shrink-0" width="32"
-                height="32">
-              <div>
-                <h5>Appointment Types</h5>
-                <div>Zoom, Email, Phone</div>
-              </div>
-            </li>
-            <li class="d-flex gap-4">
-              <img src="img/mail.png" alt="" class="flex-shrink-0" width="32" height="32">
-              <div>
-                <h5>E-mail</h5>
-                <div>someone.somelastname@lehman.cuny.edu</div>
-              </div>
-            </li>
-            <li class="d-flex gap-4">
-              <img src="img/link.png" alt="" class="flex-shrink-0" width="32" height="32">
-              <div>
-                <h5>Advising Link</h5>
-                <a href="http://www.youtube.com">go somewhere</a>
-              </div>
-            </li>
-          </ul>
-          <button type="button" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+  <div id="modal-container">
   </div>
 
   <!------------------------------- content ----------------------------->
 
   <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
-
-    <div class="list-group">
-
-
-      <a href="#" type="button" class="list-group-item list-group-item-action d-flex gap-3 py-3 " data-bs-toggle="modal"
-        data-bs-target=" #exampleModal">
-        <img src="img/book-icon.png" alt="" class="flex-shrink-0" width="32" height="32">
-        <div class="d-flex gap-2 w-100 justify-content-between">Academic Department Appointment Types Email Advising
-          Link Notes
-          ABC BS (Interdepartmental Concentration in Anthropology, Biology, & Chemistry)</div>
-      </a>
-
-
-      <a href="#" type="button" class="list-group-item list-group-item-action d-flex gap-3 py-3 " data-bs-toggle="modal"
-        data-bs-target=" #exampleModal">
-        <img src="img/book-icon.png" alt="" class="flex-shrink-0" width="32" height="32">
-        <div class="d-flex gap-2 w-100 justify-content-between">Africana Studies</div>
-      </a>
-      <a href="#" type="button" class="list-group-item list-group-item-action d-flex gap-3 py-3 " data-bs-toggle="modal"
-        data-bs-target=" #exampleModal">
-        <img src="img/book-icon.png" alt="" class="flex-shrink-0" width="32" height="32">
-        <div class="d-flex gap-2 w-100 justify-content-between">Anthropology BA, Anthropology Minor, and Human Rights &
-          Peace Studies Minor</div>
-      </a>
-      <a href="#" type="button" class="list-group-item list-group-item-action d-flex gap-3 py-3 " data-bs-toggle="modal"
-        data-bs-target=" #exampleModal">
-        <img src="img/book-icon.png" alt="" class="flex-shrink-0" width="32" height="32">
-        <div class="d-flex gap-2 w-100 justify-content-between">Art</div>
-      </a>
-      <a href="#" type="button" class="list-group-item list-group-item-action d-flex gap-3 py-3 " data-bs-toggle="modal"
-        data-bs-target=" #exampleModal">
-        <img src="img/book-icon.png" alt="" class="flex-shrink-0" width="32" height="32">
-        <div class="d-flex gap-2 w-100 justify-content-between">Biology</div>
-      </a>
-
-
+    <div id="content-list" class="list-group">
     </div>
-
   </div>
 
 </body>
