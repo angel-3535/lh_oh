@@ -22,6 +22,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
     </script>
+  <script defer src="list.js"></script>
   <script defer src="script.js"></script>
 
 
@@ -36,6 +37,10 @@
 </head>
 
 <body class="montserrat">
+
+  <div class="my-3 d-flex flex-column align-items-center justify-content-center">
+    <input class="" type="text">
+  </div>
   <!-- Modals -->
 
   <div id="modal-container">
@@ -43,11 +48,55 @@
 
   <!------------------------------- content ----------------------------->
 
-  <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
-    <div id="content-list" class="list-group">
+  <div>
+    <div class="d-flex flex-column flex-md-row gap-4 align-items-center justify-content-center">
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="AS-tab" data-bs-toggle="tab" data-bs-target="#AS-tab-pane" type="button"
+            role="tab" aria-controls="-tab-pane" aria-selected="true">Administrative Services</button>
+        </li>
+
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="UA-tab" data-bs-toggle="tab" data-bs-target="#UA-tab-pane" type="button"
+            role="tab" aria-controls="profile-tab-pane" aria-selected="false">Undergraduate
+            Advising</button>
+        </li>
+
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="GA-tab" data-bs-toggle="tab" data-bs-target="#GA-tab-pane" type="button"
+            role="tab" aria-controls="contact-tab-pane" aria-selected="false">Graduate Advising</button>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="tab-content" id="myTabContent">
+
+      <div class="tab-pane fade show active" id="AS-tab-pane" role="tabpanel" aria-labelledby="AS-tab" tabindex="0">
+        <div class="border d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+          <div id="content-list-AS" class="list-group ">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane show fade" id="UA-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="border d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+          <div id="content-list-UA" class="list-group">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane show fade" id="GA-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+        <div class="border d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+          <div id="content-list-GA" class="list-group">
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-
 </body>
 
 </html>

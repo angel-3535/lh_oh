@@ -1,57 +1,37 @@
-
-
-
-const infoArray = [
-  {
-    AcademicDep: 'ABC BS (Interdepartmental Concentration in Anthropology, Biology, & Chemistry)',
-    AppTypes: 'Zoom, Email, Phone',
-    Email: 'victoria.dominguez@lehman.cuny.edu',
-    link: 'http://www.lehman.edu/academics/anthropology',
-    notes: '',
-    group: 'UndAdv'
-  },
-  {
-    AcademicDep: 'Africana Studies',
-    AppTypes: 'Email, Phone, Blackboard, Zoom',
-    Email: 'africana.studies@lehman.cuny.edu',
-    link: 'https://www.lehman.edu/academics/arts-humanities/africana-studies/advising/',
-    notes: '',
-    group: 'UndAdv'
-  },
-  {
-    AcademicDep: 'Anthropology BA, Anthropology Minor, and Human Rights & Peace Studies Minor',
-    AppTypes: 'Zoom, Email, Phone',
-    Email: 'anthony.dest@lehman.cuny.edu',
-    link: 'http://www.lehman.edu/academics/anthropology',
-    notes: '',
-    group: 'UndAdv'
-  },
-  {
-    AcademicDep: 'Art',
-    AppTypes: 'Email, Virtual Phone',
-    Email: '',
-    link: 'https://www.lehman.edu/academics/arts-humanities/art/advising/',
-    notes: 'Follow link for instructions',
-    group: 'UndAdv'
-  },
-
-];
-
-
 $(document).ready(main());
 
+let currentList = infoAS;
+
+function main() {
+  clean();
+  renderTable(infoAS, '#content-list-AS');
+  $('#AS-tab').on("click",() => {
+    currentList = infoAS;
+    renderTable(currentList, '#content-list-AS' );
+  });
+  $('#UA-tab').on("click",() => {
+    currentList = infoUA;
+    renderTable(currentList, '#content-list-UA');
+  });
+  $('#GA-tab').on("click",() => {
+    currentList = infoGA;
+    renderTable(currentList, '#content-list-GA');
+  });
+}
 
 
 function clean() {
   $('#modal-container').html(``);
-  $('#content-list').html(``);
+  $('#content-list-AS').html(``);
+  $('#content-list-UA').html(``);
+  $('#content-list-GA').html(``);
 }
 
-function main() {
+function renderTable(list,elementID){
   clean();
   let i = 0;
   // generate options
-  infoArray.forEach(element => {
+  list.forEach(element => {
     const AcademicDep = element.AcademicDep;
     const AppTypes = element.AppTypes;
     const Email = element.Email;
@@ -60,9 +40,7 @@ function main() {
     const group = element.group;
     const modalID = "modalIdentifier-" + i;
 
-    console.log("generating div for : " + AcademicDep);
-
-    $('#content-list').append(
+    $(elementID).append(
       ` <a href="#" type="button" class="list-group-item list-group-item-action d-flex gap-3 py-3 " data-bs-toggle="modal"
       data-bs-target=" #${modalID}">
         <img src="img/book-icon.png" alt="" class="flex-shrink-0" width="32" height="32">
@@ -70,24 +48,7 @@ function main() {
       </a>`
     );
 
-
-    i++;
-  });
-
-  i = 0;
-  // generate modals
-  infoArray.forEach(element => {
-    const AcademicDep = element.AcademicDep;
-    const AppTypes = element.AppTypes;
-    const Email = element.Email;
-    const link = element.link;
-    const notes =  element.notes === '' ? "No notes provided": element.notes;
-    const group = element.group;
-    const modalID = "modalIdentifier-" + i;
-
-    console.log("generating div for : " + AcademicDep);
-
-    $('#content-list').append(
+    $('#modal-container').append(
       `
       <div class="modal fade" id="${modalID}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -136,6 +97,8 @@ function main() {
     );
 
 
-    i++;
   });
 }
+
+
+
